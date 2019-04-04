@@ -12,6 +12,7 @@
                       <a href="{{ route('questions.index') }}"class="btn btn-outline-secondary">Ask Question</a>
                     </div>
                   </div>
+                </div>
                 <div class="card-body">
                   {!! $question->body_html!!}
                         </form>
