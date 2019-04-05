@@ -15,6 +15,10 @@ class Answer extends Model
   public function getBodyHtmlAttribute() {
     return \Parsedown::instance()->text($this->body);
 }
+public function getCreatedDateAttribute()
+{
+  return $this->created_at->diffForHumans();
+}
 public static function boot()
 {
 parent::boot();
@@ -24,4 +28,5 @@ static::created(function ($answer) {
   $answer->question->save();
 });
 }
+
 }
