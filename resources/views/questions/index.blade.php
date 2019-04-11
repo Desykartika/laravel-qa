@@ -45,24 +45,21 @@
                               <button type="submit" class="btn btn-sm btn-outline-danger" onclick="return confirm('Are You sure?')">Delete</button>
                             </form>
                             @endcan
+                              </div>
+                              </div>
+                              <p class="lead">
+                                Asked by
+                                  <a href="{{ $question->user->url }}">{{ $question->user->name }}</a>
+                                  <small class="text-muted">{{ $question->created_date }}</small>
+                                </p>
+                                {{ str_limit($question->body, 250) }}
                             </div>
-                            </div>
-                            <p class="lead">
-                              Asked by
-                                <a href="{{ $question->user->url }}">{{ $question->user->name }}</a>
-                                <small class="text-muted">{{ $question->created_date }}</small>
-                            </p>
-                            {{ str_limit($question->body, 250) }}
+                        </div>
+                        <hr>
+                        @endforeach
+                        <div class="mx-auto">
+                          {{ $questions->links() }}
                         </div>
                     </div>
-<hr>
-                    @endforeach
-                    <div class="mx-auto">
-                      {{ $questions->links() }}
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-@endsection
+
+    @endsection
